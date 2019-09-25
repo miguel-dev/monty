@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-
+#include <string.h>
 int main(void)
 {
 	FILE *file;
@@ -17,7 +17,14 @@ int main(void)
 	{
 		printf("%s", linenumber);
 		tokensline[i] = strtok(linenumber, " \n");
-		printf("tokens 0: %s\n", *tokensline[1]);
+		printf("tokens 0: %s\n", tokensline[i]);
+		while (i < 10)
+		{
+			i++;
+			tokensline[i] = strtok(NULL, " \n");
+			if (i == 9 || tokensline[i] == NULL)
+				break;
+		}
 	}
 	free(linenumber);
 	exit(EXIT_SUCCESS);
