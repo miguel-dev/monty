@@ -7,7 +7,7 @@
  *
  * Return: Pointer to a function or NULL if it doesn't exist.
  */
-void (*get_opcode(char *s))(stack_t **top)
+void (*get_opcode(char *s))(stack_t **stack, unsigned int line_number)
 {
 	instruction_s opcodes[] = {
 		{"push", push},
@@ -24,7 +24,7 @@ void (*get_opcode(char *s))(stack_t **top)
 	i = 0;
 	while (opcodes[i].opcode != NULL)
 	{
-		if (*(opcodes[i]).opcode == s)
+		if (strcmp(opcodes[i].opcode, s) == 0)
 			return (opcodes[i].f);
 		i++;
 	}

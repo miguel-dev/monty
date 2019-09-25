@@ -4,7 +4,7 @@
  * pall - Prints all the values on the stack, starting from top.
  * @top: Address of the top element of the stack.
  */
-void pall(stack_t **top)
+void pall(stack_t **stack, __attribute__((unused)) unsigned int line_number)
 {
 	stack_t *top_stack = NULL;
 

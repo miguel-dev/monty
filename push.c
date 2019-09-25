@@ -2,9 +2,10 @@
 
 /**
  * push - pushes an element to the stack.
- * @top: Addess of the top element of the stack.
+ * @stack: Address of the top element of the stack.
+ * @line_number: Number of line.
  */
-void push(stack_t **top)
+void push(stack_t **stack, __attribute__((unused)) unsigned int line_number)
 {
 	stack_t *element;
 
