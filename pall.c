@@ -2,7 +2,8 @@
 
 /**
  * pall - Prints all the values on the stack, starting from top.
- * @top: Address of the top element of the stack.
+ * @stack: Address of the top element of the stack.
+ * @line_number: Number of the line.
  */
 void pall(stack_t **stack, __attribute__((unused)) unsigned int line_number)
 {
