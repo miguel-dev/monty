@@ -7,7 +7,7 @@
  *
  * Return: Pointer to a function or NULL if it doesn't exist.
  */
-void (*get_opcode(char *s))(stack_t **stack, unsigned int line_number)
+void (*get_opcode(char *s)) (stack_t **stack, unsigned int line_number)
 {
 	instruction_s opcodes[] = {
 		{"push", push},
@@ -28,5 +28,4 @@ void (*get_opcode(char *s))(stack_t **stack, unsigned int line_number)
 			return (opcodes[i].f);
 		i++;
 	}
-	return (NULL);
 }

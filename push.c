@@ -8,6 +8,7 @@
 void push(stack_t **stack, __attribute__((unused)) unsigned int line_number)
 {
 	stack_t *element;
+	stack_t *following;
 
 	element = malloc(sizeof(stack_t));
 	if (element == NULL)
@@ -15,6 +16,9 @@ void push(stack_t **stack, __attribute__((unused)) unsigned int line_number)
 
 	element->n = number;
 	element->prev = NULL;
-	element->next = *top;
-	*top = element;
+	following = element->next;
+	if (following)
+		following->prev = element;
+	element->next = *stack;
+	*stack = element;
 }
