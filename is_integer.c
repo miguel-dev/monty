@@ -8,10 +8,10 @@
  */
 int is_integer(char *str)
 {
-	while (integer)
+	while (str)
 	{
-		if (isdigit(*integer))
-			integer++;
+		if (isdigit(*str))
+			str++;
 		else
 			return (0);
 	}
