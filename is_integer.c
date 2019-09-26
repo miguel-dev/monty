@@ -10,7 +10,7 @@ int is_integer(char *str)
 {
 	while (str)
 	{
-		if (isdigit(*str))
+		if (isdigit(*str - '0'))
 			str++;
 		else
 			return (0);
