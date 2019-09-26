@@ -6,6 +6,7 @@
 #include <string.h>
 #include <unistd.h>
 #include <sys/types.h>
+#include <ctype.h>
 #include <string.h>
 
 /**
@@ -41,6 +42,7 @@ typedef struct instruction_s
 extern int number;
 
 void _getline(char *file);
+int is_integer(char* str);
 void (*get_opcode(char *s))(stack_t **stack, unsigned int line_number);
 void push(stack_t **stack, unsigned int line_number);
 void pall(stack_t **stack, unsigned int line_number);
