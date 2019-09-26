@@ -38,9 +38,9 @@ for our learning in Holberton school
 
 |         File            |             Description                  |
 | ------------------------| ---------------------------------------- |
-|       ** main.c**       |
+|       **main.c**       |
 |    **_getline.c**       |
 |   **get_opcode.c**      |
-|      **pall.c           |
+|      **pall.c**           |
 |     **push.c**          |
 |     **monty.h**         |
