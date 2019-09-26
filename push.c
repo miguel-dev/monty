@@ -3,6 +3,7 @@
 /**
  * push - pushes an element to the stack.
  * @top: Addess of the top element of the stack.
+ * @line_number: number of the line
  */
 void push(stack_t **top, unsigned int line_number)
 {
@@ -17,15 +18,27 @@ void push(stack_t **top, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 	tokenarg1 = strtok(NULL, " \n\t");
-	if (isdigit(tokenarg1) == 1 && tokenarg1 != NULL)
+	if (is_integer(tokenarg1) == 1 && tokenarg1 != NULL)
 		number = atoi(tokenarg1);
 	else
 	{
-		fprintf(stderr, "L<%d>: usage: push integer", line_number);
+		fprintf(stderr, "L%d: usage: push integer\n", line_number);
+		free_stack(*top);
 		exit(EXIT_FAILURE);
 	}
-	element->n = number;
-	element->prev = NULL;
-	element->next = *top;
-	*top = element;
+	if (*top == NULL)
+	{
+		element->n = number;
+		element->next = NULL;
+		element->prev = NULL;
+		*top = element;
+	}
+	else
+	{
+		element->n = number;
+		(*top)->prev = element;
+		element->next = (*top);
+		element->prev = NULL;
+		*top = element;
+	}
 }

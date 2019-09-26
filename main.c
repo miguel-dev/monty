@@ -15,5 +15,5 @@ int main(int argc, char *argv[])
 		exit(EXIT_FAILURE);
 	}
 	_getline(argv[1]);
-	return(0);
+	return (0);
 }

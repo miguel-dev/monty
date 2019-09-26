@@ -11,10 +11,9 @@ void _getline(char *filename)
 	size_t len = 0;
 	ssize_t read, lines = 1;
 	char *tokencommand;
-	stack_t **stack;
+	stack_t *stack = NULL;
 	ptr_to_func _function;
 
-	stack = NULL;
 	file = fopen(filename, "r");
 	if (file == NULL)
 	{
@@ -29,14 +28,17 @@ void _getline(char *filename)
 		_function = get_opcode(tokencommand);
 		if (_function == NULL)
 		{
-			fprintf(stderr, "L<%ld>: unknown instruction <%s>",
+			fprintf(stderr, "L%ld: unknown instruction %s\n",
 			       lines, tokencommand);
 			fclose(file);
+			free(linenumber);
+			free_stack(stack);
 			exit(EXIT_FAILURE);
 		}
-		_function(stack, lines);
+		_function(&stack, lines);
 	lines++;
 	}
 	free(linenumber);
 	fclose(file);
+	free_stack(stack);
 }
