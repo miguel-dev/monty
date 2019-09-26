@@ -17,4 +17,4 @@
 ++ .			; print t   ASCII 116
 ----- .			; print o   ASCII 111
 - .			; print n   ASCII 110
->++++++++++.		; print NEW LINE
+<++++++++++.		; print NEW LINE
