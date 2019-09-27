@@ -24,7 +24,7 @@ void mul(stack_t **stack, unsigned int line_number)
 	for (i = 0; aux1; i++)
 		aux1 = aux1->next;
 
-	if (n <= 2)
+	if (n < 2)
 	{
 		fprintf(stderr, "L%d: can't mul, stack too short\n", line_number);
 		error_flag = 1;
