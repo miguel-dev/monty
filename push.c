@@ -24,7 +24,7 @@ void push(stack_t **top, unsigned int line_number)
 		fprintf(stderr, "L%d: usage: push integer\n", line_number);
 		error_flag = 1;
 		free(element);
-		return;	
+		return;
 	}
 	if (tokenarg1 != NULL && is_integer(tokenarg1) == 1)
 		number = atoi(tokenarg1);
@@ -35,19 +35,17 @@ void push(stack_t **top, unsigned int line_number)
 		free(element);
 		return;
 	}
+	element->n = number;
 	if (*top == NULL)
 	{
-		element->n = number;
 		element->next = NULL;
 		element->prev = NULL;
-		*top = element;
 	}
 	else
 	{
-		element->n = number;
 		(*top)->prev = element;
 		element->next = (*top);
 		element->prev = NULL;
-		*top = element;
 	}
+	*top = element;
 }
