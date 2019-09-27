@@ -39,5 +39,5 @@ void _div(stack_t **stack, unsigned int line_number)
 	aux2 = (*stack)->next;
 	free(*stack);
 	*stack = aux2;
-	(*stack)->n = n / (*stack)->n;
+	(*stack)->n = (*stack)->n / n;
 }
