@@ -1,3 +1,4 @@
+#define EMMA
 #include "monty.h"
 
 /**
