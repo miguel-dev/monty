@@ -26,7 +26,10 @@ void _getline(char *filename)
 	{
 		tokencommand = strtok(linenumber, " \n\t");
 		if (tokencommand == NULL)
-			exit(EXIT_FAILURE);
+		{
+			lines++;
+			continue;
+		}
 		_function = get_opcode(tokencommand);
 		if (_function == NULL)
 		{

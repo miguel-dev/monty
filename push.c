@@ -19,7 +19,14 @@ void push(stack_t **top, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 	tokenarg1 = strtok(NULL, " \n\t");
-	if (is_integer(tokenarg1) == 1 && tokenarg1 != NULL)
+	if (!tokenarg1)
+	{
+		fprintf(stderr, "L%d: usage: push integer\n", line_number);
+		error_flag = 1;
+		free(element);
+		return;	
+	}
+	if (tokenarg1 != NULL && is_integer(tokenarg1) == 1)
 		number = atoi(tokenarg1);
 	else
 	{
