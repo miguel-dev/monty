@@ -26,5 +26,8 @@ void sub(stack_t **stack, unsigned int line_number)
 	aux2 = (*stack)->next;
 	free(*stack);
 	*stack = aux2;
-	(*stack)->n = n - (*stack)->n;
+	if (n > (*stack)->n)
+		(*stack)->n = n - (*stack)->n;
+	else
+		(*stack)->n = (*stack)->n - n;
 }
