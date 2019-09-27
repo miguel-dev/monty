@@ -13,7 +13,7 @@ ptr_to_func get_opcode(char *s)
 		{"push", push},
 		{"pall", pall},
 		{"pint", pint},
-		{"nop". nop},
+		{"nop", nop},
 		{NULL, NULL}
 	};
 	int i;
