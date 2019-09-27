@@ -12,6 +12,11 @@ ptr_to_func get_opcode(char *s)
 	instruction_t opcodes[] = {
 		{"push", push},
 		{"pall", pall},
+		{"pint", pint},
+		{"nop", nop},
+		{"pop", pop},
+		{"swap", swap},
+		{"add", add},
 		{NULL, NULL}
 	};
 	int i;
