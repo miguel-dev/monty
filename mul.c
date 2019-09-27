@@ -11,6 +11,13 @@ void mul(stack_t **stack, unsigned int line_number)
 	stack_t *aux1, *aux2;
 	int n = 0, i = 0;
 
+	if (*stack == NULL)
+	{
+		fprintf(stderr, "L%d: can't mul, stack too short\n", line_number);
+		error_flag = 1;
+		return;
+	}
+
 	aux1 = *stack;
 	n = aux1->n;
 
