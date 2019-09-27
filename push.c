@@ -23,8 +23,9 @@ void push(stack_t **top, unsigned int line_number)
 	else
 	{
 		fprintf(stderr, "L%d: usage: push integer\n", line_number);
-		free_stack(*top);
-		exit(EXIT_FAILURE);
+		error_flag = 1;
+		free(element);
+		return;
 	}
 	if (*top == NULL)
 	{

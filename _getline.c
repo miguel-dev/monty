@@ -1,4 +1,5 @@
 #include "monty.h"
+int error_flag = 0;
 /**
  * _getline - Function for get line by line into a file
  * @filename: Name of the file
@@ -36,9 +37,17 @@ void _getline(char *filename)
 			exit(EXIT_FAILURE);
 		}
 		_function(&stack, lines);
+		if (error_flag == 1)
+		{
+			fclose(file);
+			free(linenumber);
+			free_stack(stack);
+			exit(EXIT_FAILURE);
+		}
 	lines++;
 	}
 	free(linenumber);
 	fclose(file);
 	free_stack(stack);
+	exit(0);
 }

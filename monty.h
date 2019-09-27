@@ -38,7 +38,7 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-extern int number;
+extern int error_flag;
 
 typedef void (*ptr_to_func)(stack_t **stack, unsigned int line_number);
 ptr_to_func get_opcode(char *s);
