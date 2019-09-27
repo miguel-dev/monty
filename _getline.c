@@ -9,10 +9,9 @@
 void _getline(char *filename)
 {
 	FILE *file;
-	char *linenumber = NULL;
+	char *linenumber = NULL, *tokencommand;
 	size_t len = 0;
 	ssize_t read, lines = 1;
-	char *tokencommand;
 	stack_t *stack = NULL;
 	ptr_to_func _function;
 
@@ -49,7 +48,6 @@ void _getline(char *filename)
 	free(linenumber);
 	fclose(file);
 	free_stack(stack);
-	exit(0);
 }
 /**
  * _freefunction - Function for free and close file
