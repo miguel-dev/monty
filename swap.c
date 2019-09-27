@@ -12,7 +12,7 @@ void swap(stack_t **stack, unsigned int line_number)
 	int n = 0, i = 0;
 
 	aux1 = *stack;
-	for(i = 0; aux1; i++)
+	for (i = 0; aux1; i++)
 		aux1 = aux1->next;
 
 	if (i <= 2)
