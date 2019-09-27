@@ -1,5 +1,6 @@
+#define EMMA
 #include "monty.h"
-int error_flag = 0;
+
 /**
  * _getline - Function for get line by line into a file
  * @filename: Name of the file
@@ -31,18 +32,14 @@ void _getline(char *filename)
 		{
 			fprintf(stderr, "L%ld: unknown instruction %s\n",
 			       lines, tokencommand);
-			fclose(file);
-			free(linenumber);
 			free_stack(stack);
-			exit(EXIT_FAILURE);
+			_freefunction(linenumber, file);
 		}
 		_function(&stack, lines);
 		if (error_flag == 1)
 		{
-			fclose(file);
-			free(linenumber);
 			free_stack(stack);
-			exit(EXIT_FAILURE);
+			_freefunction(linenumber, file);
 		}
 	lines++;
 	}
@@ -50,4 +47,16 @@ void _getline(char *filename)
 	fclose(file);
 	free_stack(stack);
 	exit(0);
+}
+/**
+ * _freefunction - Function for free and close file
+ * @linenumber: line into the file
+ * @file: file descriptor for close
+ * Return: nothing
+ */
+void _freefunction(char *linenumber, FILE *file)
+{
+	fclose(file);
+	free(linenumber);
+	exit(EXIT_FAILURE);
 }

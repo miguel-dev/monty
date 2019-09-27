@@ -38,7 +38,11 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+#ifdef EMMA
+int error_flag;
+#else
 extern int error_flag;
+#endif
 
 typedef void (*ptr_to_func)(stack_t **stack, unsigned int line_number);
 ptr_to_func get_opcode(char *s);
@@ -53,5 +57,6 @@ void add(stack_t **stack, unsigned int line_number);
 void nop(stack_t **stack, unsigned int line_number);
 int is_integer(char *str);
 void free_stack(stack_t *head);
+void _freefunction(char *linenumber, FILE *file);
 
 #endif
