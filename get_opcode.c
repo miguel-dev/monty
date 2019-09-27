@@ -18,6 +18,7 @@ ptr_to_func get_opcode(char *s)
 		{"swap", swap},
 		{"add", add},
 		{"sub", sub},
+		{"div", _div},
 		{NULL, NULL}
 	};
 	int i;
