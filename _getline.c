@@ -24,7 +24,7 @@ void _getline(char *filename)
 	while ((read = getline(&linenumber, &len, file)) != -1)
 	{
 		tokencommand = strtok(linenumber, " \n\t");
-		if (tokencommand == NULL)
+		if (tokencommand == NULL || tokencommand[0] == '#')
 		{
 			lines++;
 			continue;
