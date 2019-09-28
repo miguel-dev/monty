@@ -14,8 +14,8 @@ void add(stack_t **stack, unsigned int line_number)
 	if (*stack == NULL)
 	{
 		fprintf(stderr, "L%d: can't add, stack too short\n", line_number);
-                error_flag = 1;
-                return;
+		error_flag = 1;
+		return;
 	}
 
 	aux1 = *stack;
