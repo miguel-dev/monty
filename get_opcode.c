@@ -20,6 +20,7 @@ ptr_to_func get_opcode(char *s)
 		{"sub", sub},
 		{"div", _div},
 		{"mul", mul},
+		{"mod", mod},
 		{NULL, NULL}
 	};
 	int i;
