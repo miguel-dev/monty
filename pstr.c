@@ -11,7 +11,10 @@ void pstr(stack_t **stack, __attribute__((unused)) unsigned int line_number)
 	stack_t *top_stack = NULL;
 
 	if (*stack == NULL)
+	{
 		printf("\n");
+		return;
+	}
 	top_stack = *stack;
 	while (top_stack != NULL)
 	{
