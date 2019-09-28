@@ -13,7 +13,7 @@ void pstr(stack_t **stack, __attribute__((unused)) unsigned int line_number)
 	if (*stack == NULL)
 		printf("\n");
 	top_stack = *stack;
-	while(top_stack != NULL)
+	while (top_stack != NULL)
 	{
 		c = top_stack->n;
 		if (c >= 1 && c <= 127)
