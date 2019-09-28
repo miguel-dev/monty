@@ -16,6 +16,7 @@ ptr_to_func get_opcode(char *s)
 		{"nop", nop},
 		{"pop", pop},
 		{"swap", swap},
+		{"pchar", pchar},
 		{"add", add},
 		{"sub", sub},
 		{"div", _div},
